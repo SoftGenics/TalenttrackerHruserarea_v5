@@ -63,6 +63,15 @@ const Dashboard = () => {
                 <Col sm={4} data-theme={theme}>
                     <Card data-theme={theme}>
                         <Card.Body>
+                            <Card.Title>No. of JDs at offer stage</Card.Title>
+                            <br></br>
+                            <h2>40</h2>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col sm={4} data-theme={theme}>
+                    <Card data-theme={theme}>
+                        <Card.Body>
                             <Card.Title>No. of JD delivered/submitted but feedback pending from client</Card.Title>
                             <br></br>
                             <h2>0</h2>

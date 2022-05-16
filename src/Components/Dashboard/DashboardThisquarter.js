@@ -55,6 +55,15 @@ const DasboardThisquarter = () => {
                         </Card.Body>
                     </Card>
                 </Col>
+                <Col sm={4} >
+                    <Card>
+                        <Card.Body>
+                            <Card.Title>No. of JDs at offer stage</Card.Title>
+                            <br></br>
+                            <h2>0</h2>
+                        </Card.Body>
+                    </Card>
+                </Col>
                 <Col sm={4}>
                     <Card>
                         <Card.Body>

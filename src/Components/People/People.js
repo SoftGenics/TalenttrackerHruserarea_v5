@@ -10,6 +10,48 @@ const options = [
     { value: ' ' },
   
   ]
+  const options1 = [
+    { value: ' India', label:'India'},
+    { value: ' USA', label:'USA'},
+    { value: ' Africa', label:'Africa'},
+  
+  ]
+  const options2 = [
+    { value: ' 8.33%', label:'8.33%'},
+    { value: ' 7%', label:'7%'},
+    { value: ' 7.5 %', label:'7.5 %'},
+    { value: ' 7.25 %', label:'7.25 %'},
+    { value: ' 6 %', label:'6 %'},
+    { value: ' 10 %', label:'10 %'},
+    
+  
+  ]
+  const paymentterms = [
+    {value:'30 days', label:'30 days'},
+    {value:'45 days', label:'45 days'},
+    {value:'60 days', label:'60 days'},
+    {value:'75 days', label:'75 days'},
+    {value:'90 days', label:'90 days'},
+  ]
+  const Yourpayout = [
+    {value:'25%', label:'25%'},
+    {value:'30%', label:'30%'},
+    {value:'35%', label:'35%'},
+    {value:'40%', label:'40%'},
+    {value:'45 %', label:'45%'},
+    {value:'50 %', label:'50%'},
+    {value:'55 %', label:'55%'},
+    {value:'60 %', label:'60%'},
+  ]
+  const JDstatus = [
+    {value:'Open (not accepted by any user)', label:'Open (not accepted by any user)'},
+    {value:'Pending delivery (accepted but not yet delivered)', label:'Pending delivery (accepted but not yet delivered)'},
+    {value:'delivery done-await client feedback', label:'Delivery done-await client feedback'},
+    {value:'interview stage', label:'Interview stage'},
+    {value:'Offer stage', label:'Offer stage'},
+    {value:'JD successfully closed', label:'JD successfully closed'}, 
+    {value:'rework (with reason)', label:'Rework (with reason)'}
+  ]
 const People = () => {
  const   handleChange = (
         newValue: OnChangeValue<ColourOption, false>,
@@ -36,9 +78,34 @@ const People = () => {
         <Container className='search-contact'>
             <form>
                 <div className='p-3 form-div' >
+                  <Row>
+                    <Col xs={6}>
+                    <Form.Group>
+                    <Form.Label className='fw-bold'>CVs quality check required by Admin? (Y/N)</Form.Label>
+                    <div className='d-flex'>
+                    <Form.Check type="radio" name="cvcheck" label="YES" value="yes" />
+                    <Form.Check type="radio" name="cvcheck" label="NO" value="No" className='mx-3' />
+                    </div>
+                  </Form.Group>
+                    </Col>
+                    <Col xs={6}>
+                      <Form.Group>
+                        <Form.Label className='fw-bold'> JD upload date-time </Form.Label>
+                        <Row>
+                          <Col xs={6}>
+                          <Form.Control type='date' placeholder='date' />
+                          </Col>
+                          <Col xs={6}><Form.Control type='time' placeholder='time' /></Col>
+                        </Row>
+                        
+                        
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <br></br>
                     <Row>
                         <Col md={4}>
-                        <h6 class="fw-bold">Search by Person Name</h6>
+                        <h6 class="fw-bold">Industry</h6>
                         <CreatableSelect
                                 isMulti
                                 isClearable
@@ -49,7 +116,9 @@ const People = () => {
                             <small>Use tab/enter for multi selection.</small>
                         </Col>
                         <Col md={4}>
-                      <br></br>
+                      
+                      <h6 class="fw-bold">Client Name</h6>
+                
                         <CreatableSelect
                                 isMulti
                                 isClearable
@@ -60,36 +129,83 @@ const People = () => {
                             <small>Use tab/enter for multi selection.</small>
                         </Col>
                     </Row>
-                    <div className='d-flex selectAllCheckbox align-items-center mt-3 mb-3'>
-                    <h6 className="fw-bold me-2 mb-0 mt-3">Search By Company Type</h6><i className="fas fa-info-circle me-2 mt-3"></i><small className='mt-3 '>Select <span className='text-primary'>All / None</span></small>
-                    </div>
+                    <br></br>
                     <Row>
-                      <Col md={4}>
-                        <div className='d-flex'>
-                        <Form.Check type='checkbox' label='Indias Top 1000'>
-                        </Form.Check> <i className="fas fa-info-circle mx-3 mt-1"></i>
-                        </div>
-                        <div className='d-flex mt-2'>
-                        <Form.Check type='checkbox' label='SMEs/MSMEs'>
-                        </Form.Check> <i className="fas fa-info-circle mx-3 mt-1"></i>
-                        </div>
+                      <Col xs={4}>
+                      <h6 class="fw-bold"> work location of JD</h6>
+                        <CreatableSelect
+                                isMulti
+                                isClearable
+                                onChange={handleChange}
+                                onInputChange={handleInputChange}
+                                options={options1}
+                            />
                       </Col>
-                      <Col md={4}>
-                      <div className='d-flex'>
-                        <Form.Check type='checkbox' label='MNC'>
-                        </Form.Check> <i className="fas fa-info-circle mx-3 mt-1"></i>
-                        </div>
-                        <div className='d-flex mt-2'>
-                        <Form.Check type='checkbox' label='Startups'>
-                        </Form.Check> <i className="fas fa-info-circle mx-3 mt-1"></i>
-                        </div>  
-                        </Col>
-                        <Col md={4}>
-                        <div className='d-flex'>
-                        <Form.Check type='checkbox' label='Industry Leaders'>
-                        </Form.Check> <i className="fas fa-info-circle mx-3 mt-1"></i>
-                        </div> 
-                        </Col>
+                      <Col xs={4}>
+                      <h6 class="fw-bold"> Sign up rate with client</h6>
+                        <CreatableSelect
+                                isMulti
+                                isClearable
+                                onChange={handleChange}
+                                onInputChange={handleInputChange}
+                                options={options2}
+                            />
+                      </Col>
+                      <Col xs={4}>
+                      <h6 class="fw-bold"> Salary</h6>
+                        <CreatableSelect
+                                isMulti
+                                isClearable
+                                onChange={handleChange}
+                                onInputChange={handleInputChange}
+                                options={options}
+                            />
+                      </Col>
+                    </Row>
+                    <br></br>
+                    <Row>
+                      <Col xs={4}>
+                      <h6 class="fw-bold">Payment terms</h6>
+                        <CreatableSelect
+                                isClearable
+                                onChange={handleChange}
+                                onInputChange={handleInputChange}
+                                options={paymentterms}
+                            />
+                      </Col>
+                      <Col xs={4}>
+                      <h6 class="fw-bold">Your payout</h6>
+                        <CreatableSelect
+                                isMulti
+                                isClearable
+                                onChange={handleChange}
+                                onInputChange={handleInputChange}
+                                options={Yourpayout}
+                            />
+                      </Col>
+                      <Col xs={4}>
+                      <h6 class="fw-bold">JD status</h6>
+                        <CreatableSelect
+                                isMulti
+                                isClearable
+                                onChange={handleChange}
+                                onInputChange={handleInputChange}
+                                options={JDstatus}
+                            />
+                      </Col>
+                    </Row>
+                    <br></br>
+                    <Row>
+                      <Col xs={6}>
+                        <Form.Group>
+                          <Form.Label className='fw-bold'>Client coordination to be done by whom?</Form.Label>
+                          <div className='d-flex'>
+                          <Form.Check type="radio" label="Admin" />
+                          <Form.Check type="radio" label="User" className='mx-3' />
+                          </div>
+
+                        </Form.Group>
+                      </Col>
                     </Row>
                 </div>
                     <div className='d-flex justify-content-center title-absolute py-4 border-top'>

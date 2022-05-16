@@ -112,9 +112,9 @@ const Listofjd2 = () => {
                             <th>JD Discription</th>
                             <th>Term of JD</th>
                             <th>JD Details</th>
-                            <th>Assured delivery required by the client (TAT)</th>
-                            <th>remarks/comments by admin about JD</th>
-                            <th>Client coordination to be done by whom?</th>
+                            <th>Assured delivery<br></br> required by the client (TAT)</th>
+                            <th>remarks/comments <br></br>by admin about JD</th>
+                            <th>Client coordination <br></br>to be done by whom?</th>
                             <th>JD status</th>
                             <th>Lock for me</th>
                         
@@ -125,7 +125,7 @@ const Listofjd2 = () => {
                             <td>1</td>
                             <td className='text-center'>yes</td>
                             <td>11/05/22</td>
-                            <td className='position'>Title<br></br> <span > <i className="fas fa-building me-2"  onClick={handleShow}></i> | <i className="fas fa-user ms-2" onClick={handleShow}></i> </span></td>
+                            <td className='position'>Title<br></br> <span > <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Industry</Tooltip>}><i className="fas fa-building me-2"  onClick={handleShow}></i></OverlayTrigger> | <i className="fas fa-user ms-2" onClick={handleShow}></i> </span></td>
                             <td className='deatail'>Jd Name <br></br><span><a href='https://talenttrackerhr.in/'><i className="fab fa-firefox me-2"></i></a> | <a href='https://www.linkedin.com/login'><i className="fab fa-linkedin ms-2 me-2"></i></a> | </span> <i className="fas fa-eye ms-2"  onClick={handleShow1}></i></td>
                             <td className='jd-terms'><br></br><i className="fas fa-info-circle" onClick={handleShow4}></i></td>
                             <td>jd details</td>
