@@ -82,7 +82,7 @@ export default class Login extends Component {
                       Login
                     </Button>
             </Form>
-            <p className='mt-5 mb-3'>For admin Login <a href='https://jade-cat-25b91f.netlify.app/'>Click Here</a></p>
+            <p className='mt-5 mb-3'>For admin Login <a href='https://super-boba-e8455d.netlify.app/'>Click Here</a></p>
                 </Col>
               </Row>
             </Container>
